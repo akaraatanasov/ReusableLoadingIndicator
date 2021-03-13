@@ -8,8 +8,4 @@ final class ReusableLoadingIndicatorTests: XCTestCase {
         // results.
         XCTAssertEqual(ReusableLoadingIndicator().text, "Hello, World!")
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }

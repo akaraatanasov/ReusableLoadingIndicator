@@ -2,10 +2,22 @@ import XCTest
 @testable import ReusableLoadingIndicator
 
 final class ReusableLoadingIndicatorTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(ReusableLoadingIndicator().text, "Hello, World!")
+    
+    func testPlainLoadingIndicator() {
+        let parentView = UIView()
+        let loadingIndicator = PlainLoadingIndicator(centeredIn: parentView)
+        
+        loadingIndicator.startAnimating()
+        XCTAssertEqual(loadingIndicator.isLoading, false)
+        
+        loadingIndicator.show()
+        XCTAssertEqual(loadingIndicator.isLoading, true)
+        
+        loadingIndicator.stopAnimating()
+        XCTAssertEqual(loadingIndicator.isLoading, true)
+        
+        loadingIndicator.hide()
+        XCTAssertEqual(loadingIndicator.isLoading, false)
     }
+    
 }
